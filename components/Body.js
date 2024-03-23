@@ -17,40 +17,42 @@ export default function Body() {
           imageUrl: 'https://avatars.githubusercontent.com/u/94738352?v=4',
           time: '8 pm'
         },
+        
+        
         {
-          uid: 3,
-          name: 'Sanket Singh',
-          status: 'Making your GPay smooth',
-          imageUrl: 'https://avatars.githubusercontent.com/u/29747452?v=4',
-          time: '9 am'
-        },
-        {
-          uid: 4,
-          name: 'Anirudh Jwala',
-          status: 'Building secure Digital banks',
-          imageUrl: 'https://avatars.githubusercontent.com/u/25549847?v=4',
-          time: '6 pm'
-        },
-        {
-            uid: 5,
+            uid: 3,
             name: 'Jasmita Mukherjee',
             status: 'Save your deers',
-            imageUrl: 'https://avatars.githubusercontent.com/u/25549847?v=4',
+            imageUrl: 'https://avatars.githubusercontent.com/u/125654683?v=4',
             time: '5 am'  
         },
           {
-            uid: 6,
+            uid: 4,
             name: 'Aditi Nayak',
             status: 'i love engineering',
-            imageUrl: 'https://avatars.githubusercontent.com/u/25549847?v=4',
+            imageUrl: 'https://avatars.githubusercontent.com/u/109815646?v=4',
             time: '12 am'
         },
         {
-            uid: 7,
+            uid: 5,
             name: 'Anujesh Ansh',
             status: 'i know everything',
-            imageUrl: 'https://avatars.githubusercontent.com/u/25549847?v=4',
+            imageUrl: 'https://avatars.githubusercontent.com/u/110138469?v=4',
             time: '12 am'
+        },
+        {
+            uid: 6,
+            name: 'Sanket Singh',
+            status: 'Making your GPay smooth',
+            imageUrl: 'https://avatars.githubusercontent.com/u/29747452?v=4',
+         time: '1 pm'
+        },
+          {
+            uid: 7,
+            name: 'Anirudh Jwala',
+            status: 'Building secure Digital banks',
+            imageUrl: 'https://avatars.githubusercontent.com/u/25549847?v=4',
+         time: '3 am'
         },
 
         
@@ -60,20 +62,23 @@ export default function Body() {
       <ScrollView style={styles.container} scrollEnabled={false}>
         {contacts.map(({uid,name,status,imageUrl,time}) => (
             <View key={uid} style={styles.userCard}>
+            
                 <Image
                 source={{uri: imageUrl}}
                 style={styles.userImage}
                 />
 
-                <View>
+                <View style={styles.test}>
                 <Text style={styles.userName}>{name}</Text>
                 <Text style={styles.userStatus}>{status}</Text>
                 </View>
+                
+               
                 <View style={styles.timeContainer}> 
 
-                <View>
+               
                     <Text>{time}</Text>
-                </View>
+               
                 </View>
 
             </View>
@@ -90,15 +95,21 @@ const styles = StyleSheet.create({
         borderTopLeftRadius: 30,
         borderTopRightRadius: 30
     },
+   
     userCard:{
         flex: 1,
         flexDirection: 'row',
+        justifyContent: 'space-between',
         alignItems: 'center',
         marginBottom: 3,
         marginTop:5,
         padding : 8,
         borderRadius: 10,
         
+
+    },
+    test:{
+        flex:1
 
     },
     userImage:{
@@ -121,5 +132,7 @@ const styles = StyleSheet.create({
     },
     timeContainer:{
         
+        justifyContent:'flex-end'
+
     }
 })
